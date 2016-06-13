@@ -1,0 +1,155 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+	<head>
+		<meta name='viewport' content='user-scalable=no'/>
+		<meta name="thumbnail" content="http://blogy.co/Library/images/Blogy-ICO.png" />
+		<meta name='description' content="Blogy is the place where everyone has the oportunity to share their personal and unique story with everyone. Blogy is the place where the borders are falling. Join us today and #BeUnique!">
+		<meta name='keywords' content="Blog, Blogger, Blogs, Blogging, Bloggers, Story, Stories, Personal moments, Personal stories, Unique, Be Unique, Blogy, Blogy Be Qunique, Your personal story, Share everything in your story, Social, Social media, Social network, Modern blogs, Free media, Free network, Free social media, Free social network, Free blogs, Free blogging, Free place where to share your personal moments, Free place where to share your personal stories, BeUnique, BU, #BeUnique, #BU, #Blogy, #BlogyBU, #BlogyBeUnique, BlogyBU, BlogyBeUnqiue, BeU, Blogy BeU">
+		<meta name='author' content="Gero Nikolov">
+
+		<meta property="og:url"                content="http://blogy.co" />
+		<meta property="og:type"               content="website" />
+		<meta property="og:title"              content="Blogy #BeUnique" />
+		<meta property="og:description"        content="The social network of Bloggers. The place where to share your story, hobbies, trips and everything that you like! Join us today na #BeUnique!" />
+		<meta property="og:image"              content="http://blogy.co/Library/images/Blogy-Sticker.png" />
+
+		<link rel="manifest" href="manifest.json">
+
+		<link rel='shortcut icon' href='Library/images/Blogy-ICO.png' type='image/x-icon'>
+		<link rel='icon' href='Library/images/Blogy-ICO.png' type='image/x-icon'>
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="Library/images/Blogy-ICO.png" />
+		<title>Blogy</title>
+		<link href='style-index.css' rel='stylesheet' type='text/css' media='screen' />
+		<link href= 'fonts.css' rel='stylesheet' type='text/css'>
+		<link rel='stylesheet' href='fonts.css' />
+		<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+		<!-- Include meta tag to ensure proper rendering and touch zooming -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Include jQuery Mobile stylesheets -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<!-- Include the jQuery library -->
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<!-- Include the jQuery Mobile library -->
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+		<script type='text/javascript' src='java.js'></script>
+		<script type='text/javascript' src='tryLog.js'></script>
+		<script type="text/javascript" src='Library/JScripts/index-page.js'></script>
+	</head>
+	<body onload="Entry()">
+		<div id="main-page-container" class="page-container">
+			<div id="background" class="background"></div>
+			<div class="blur-background"></div>
+			<!-- Control board [ Login, Forgotten Passowrd, Terms & Conditions, Partners, Presentation ] -->
+			<div id="control-board">
+				<h1 class="website-header">Blogy.co</h1>
+				<h2 class="website-subheader">#BeUnique</h2>
+				<div id="login" section-id="1" class="controll-medium-container controll-box active-box">
+					<div id="login-box">
+						<form id='SignIn' action="Library/PHP/checkLog.php" method="post">
+							<input type='text' name="mail" id="mail" placeholder="E-mail">
+							<input type='password' name="password" id="password" onkeyup="checkKey(event, 0)" placeholder="Password">
+						</form>
+						<button type='button' id='login-button' onclick="tryLog()">Log in</button>
+						<button type='button' id='join-button' class='bordered-button green'>Register</button>
+					</div>
+					<div id="registration-box">
+						<form id="register" action="Library/PHP/buildAuthor.php" method="post">
+							<input type="text" id="fName" name="fName" class='top' maxlength="60" placeholder="First name"></input>
+							<input type="text" id="lName" name="lName" maxlength="60" placeholder="Last name"></input>
+							<input type="text" id="mail-registration" name="mail" placeholder="E-mail address"></input>
+							<input type="password" id="pass1" name="pass" onkeyup="checkInput(event, 'pass1')" placeholder="Password"></input>
+							<input type="text" id="honey-pot" style="display: none;">
+						</form>
+						<button type='button' id='register-button' onclick="regLoad()">Join the League!</button>
+						<button type='button' id='discard-registration' class="bordered-button red">Close</button>
+					</div>
+					<div id="login-title" class="box-title">Login</div>
+				</div>
+				<div id="forgotten-password" section-id="2" class="controll-medium-container controll-box">
+					<form id='passwordReset' method='post'>
+						<input type='text' id='email_uid' name='email_uid' placeholder='E-mail'>
+						<input type='password' id='save_code' name='save_code' placeholder='Authentication code' onkeyup="checkKey(event, 2)">
+					</form>
+					<button type='button' id='login-button' onclick='notEmpty()'>Log in</button>
+					<button type='button' id='mail-button' onclick='sendPasswordAndAuth();' class='bordered-button green'>Send me email</button>
+					<div id="forgotten-password-title" class="box-title">Forgotten Password</div>
+				</div>
+				<div id="terms-and-conditions" section-id="3" class="controll-box controll-large-container">
+					<h1>What is Blogy?</h1>
+					<p>
+					Blogy is free & open social media for bloggers and not only!
+					Here everyone have the possibility to share what he thinks with the rest of the community.
+					Or if you are a book lover, here you'll find the most intriguing & catching stories around the internet. So it's so simple Gero can't even explain you what is it...<br>
+					<br>
+					So what are you waiting for?<br>
+					<br>
+					Swipe to right twice and join us!<br>
+					<br>
+					<i><u>We are using <b>COOKIES</b> (sometimes)</u></i>
+					</p>
+					<h1>What is the story?</h1>
+					<p>
+					Actually, the first idea of Blogy was only a simple web-store for blog templates. And by the time we decided to make it a little bigger and a little different from the first idea. So here we are :)
+					</p>
+					<h1>Who is responsible for Blogy?</h1>
+					<p>
+					We are group of <b>Bulgarian IT</b> students.<br>
+					Dev lead / Design lead / Founder: <a href='http://blogy.co?GeroNikolov' data-ajax='false' target='_blank'>Gero Nikolov</a><br>
+					Co-Founder & *Active supporter*: <a href='http://blogy.co?MladenKaradimov' data-ajax='false' target='_blank'>Mladen Karadimov</a><br>
+					Co-Founder & *Thumbsupper*: <a href='http://blogy.co?DimitarGeorgiev' data-ajax='false' target='_blank'>Dimitar Georgiev</a><br>
+					</p>
+					<h1>What is private & what's not?</h1>
+					<p>
+						Your stories are public for everyone in the community of Blogy.<br>
+						<b>Why?</b> Well because we believe in the open world of possibilities.<br>
+						<b>Something else?</b> Well the other things are private only for you!.<br>
+						<br>
+						So yes... Let's swipe twice to right and register you already :-D
+					</p>
+					<div id="terms-and-conditions-title" class="box-title">Terms & Conditions</div>
+				</div>
+				<div id="partners" section-id="4" class="controll-box controll-medium-container">
+					<div id="partners-title" class="box-title">Partners</div>
+				</div>
+				<div id="presentation" section-id="5" class="controll-box controll-large-container">
+					<div id="presentation-player" class="transparent-overflow"></div>
+					<iframe src="https://www.youtube.com/embed/BomOHa-9sxY" frameborder="0" allowfullscreen></iframe>
+					<div id="presentation-title" class="box-title">Presentation</div>
+				</div>
+				<div id="share" section-id="6" class="controll-box controll-medium-container">
+					<h1 class="section-header"><span class="icon green">&#xf064;</span>Share Blogy</h1>
+					<a href='http://www.facebook.com/share.php?u=http://blogy.co&title=The Social media of Bloggers' target='_blank' class="facebook" data-ajax="false">
+						<img src='Library/images/social-container-fb.png' alt="Broken image" class="social-icon" />
+					</a>
+					<a href='http://twitter.com/home?status=The Social media of Bloggers+http://blogy.co' target='_blank' class="twitter" data-ajax="false">
+						<img src='Library/images/social-container-twitter.png' alt="Broken image" class="social-icon" />
+					</a>
+					<a href='https://plus.google.com/share?url=http://blogy.co' target='_blank' class="google" data-ajax="false">
+						<img src='Library/images/social-container-google.png' alt="Broken image" class="social-icon" />
+					</a>
+					<h1 class="section-header"><span class="icon red">&#xf1e2;</span>Donate</h1>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="KD8XPWZHQWH9C">
+					<input type="submit" value="Be Unique!" name="submit" title="Donate with PayPal!" class="donate-button">
+					</form>
+					<h1 class="section-header"><span class="icon gold">&#xf0c1;</span>Contribute</h1>
+					<a href='http://make.blogy.co/contributors/' target='_blank' data-ajax="false" class="contribute">Make it</a>
+					<div id="share-title" class="box-title">Share</div>
+				</div>
+				<div id="panel-controller">
+					<div class="floating-middle-line"></div>
+					<button id="login-controller" class="active controll-button blue" title="Log in!">&#xf084;</button>
+					<button id="forgotten-password-controller" class="controll-button red" title="Forgotten Password">&#xf1d8;</button>
+					<button id="terms-and-conditions-controller" class="controll-button yellow" title="Terms & Conditions">&#xf128;</button>
+					<button id="partners-controller" class="controll-button green" title="Partners">&#xf1b0;</button>
+					<button id="presentation-controller" class="controll-button cyan" title="Presentation">&#xf0f4;</button>
+					<button id="share-controller" class="controll-button purple" title="Share Blogy">&#xf004;</button>
+				</div>
+			</div>
+		</div>
+	</body>

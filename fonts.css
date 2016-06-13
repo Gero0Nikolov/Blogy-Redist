@@ -1,0 +1,81 @@
+@charset 'UTF-8';
+
+@font-face {
+	font-family: OpenSansLight;
+	src: url('fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+	font-family: OpenSansRegular;
+	src: url('fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: OpenSansEmoji;
+	src: url('fonts/OpenSansEmoji.ttf');
+}
+
+@font-face {
+	font-family: Iconic;
+	src: url('fonts/FontAwesome/fonts/FontAwesome.otf');
+}
+
+@font-face {
+	font-family: CaladeaRegular;
+	src: url('fonts/Caladea/caladea-regular.ttf');
+}
+
+@font-face {
+	font-family: CaladeaItalic;
+	src: url('fonts/Caladea/caladea-italic.ttf');
+}
+
+@font-face {
+	font-family: CaladeaBold;
+	src: url('fonts/Caladea/caladea-bold.ttf');
+}
+
+@font-face {
+	font-family: JosefinSlabRegular;
+	src: url('fonts/JosefinSlab/JosefinSlab-Regular.ttf');
+}
+
+@font-face {
+	font-family: JosefinSlabItalic;
+	src: url('fonts/JosefinSlab/JosefinSlab-Italic.ttf');
+}
+
+@font-face {
+	font-family: JosefinSlabBold;
+	src: url('fonts/JosefinSlab/JosefinSlab-Bold.ttf');
+}
+
+@font-face {
+	font-family: VollkornRegular;
+	src: url('fonts/Vollkorn/Vollkorn-Regular.otf');
+}
+
+@font-face {
+	font-family: UbuntuRegular;
+	src: url('fonts/Ubuntu/Ubuntu-R.ttf');
+}
+
+@font-face {
+	font-family: UbuntuLight;
+	src: url('fonts/Ubuntu/Ubuntu-L.ttf');
+}
+
+@font-face {
+	font-family: AllerRegular;
+	src: url('fonts/Aller/Aller_Rg.ttf');
+}
+
+@font-face {
+	font-family: AllerLight;
+	src: url('fonts/Aller/Aller_Lt.ttf');
+}
+
+@font-face {
+	font-family: Rudiment;
+	src: url('fonts/Rudiment/Rudiment.ttf');
+}

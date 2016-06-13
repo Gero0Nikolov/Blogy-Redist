@@ -1,0 +1,317 @@
+#dev-view {
+	position: fixed;
+	display: block;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	transform: scale(0);
+	opacity: 0;
+
+	background: #333;
+
+	border: none;
+
+	z-index: 99;
+
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
+
+	#control-board {
+		display: block;
+		background: #333;
+		border-bottom: 1px solid #555;
+
+		h1 {
+			display: inline-block;
+
+			font-family: OpenSansRegular;
+			font-size: 1.25rem;
+			font-weight: normal;
+
+			color: #fff;
+			letter-spacing: 1;
+			vertical-align: middle;
+
+			margin: 0;
+			padding: 5px;
+		}
+
+		#close-dev-view {
+			background: none;
+			border: none;
+			cursor: pointer;
+
+			display: inline-block;
+			vertical-align: middle;
+
+			font-size: 1rem;
+			font-weight: normal;
+
+			color: #666;
+
+			float: right;
+			padding: 10px;
+
+			outline: 0;
+		}
+		#close-dev-view:hover { color: #ed7777; }
+	}
+
+	#dev-view-window {
+		display: block;
+		width: 100%;
+		height: calc(100% - 38px);
+		border: none;
+	}
+}
+
+#folder-explorer {
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+	overflow: auto;
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	background: #272822;
+	border-right: 3px solid #333;
+	z-index: 9;
+
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	-o-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+
+	#sub-menu {
+		display: block;
+		border-bottom: 1px solid #333;
+		text-align: center;
+
+		button {
+			background: none;
+			border: none;
+			cursor: pointer;
+
+			font-family: OpenSansRegular;
+			font-size: 14px;
+			font-weight: lighter;
+			color: #fff;
+			padding: 10px;
+
+			width: 45%;
+			display: inline-block;
+		}
+		button:hover {
+			background: #333;
+			color: #08c;
+		}
+
+		.bullet { 
+			display: inline-block;
+			vertical-align: middle;
+			color: #333;
+		}
+	}
+
+	h1 {
+		font: 16px/normal OpenSansRegular;
+		color: #fff;
+		text-align: left;
+		margin: 0;
+		padding: 10px 10px;
+		display: block;
+		border-bottom: 1px solid #333;
+	}
+
+	ol {
+		list-style: none;
+	    padding-left: 10px;
+   		margin: 10px 0 0;
+		height: calc(100% - 145px);
+
+		overflow-y: auto;
+
+		li {
+			display: block;
+
+			width: 100%;
+			text-align: left;
+			background: none;
+			border: none;
+
+			font: 14px/normal OpenSansRegular;
+			color: #fff;
+
+			a { 
+				padding: 5px 5px;
+				text-decoration: none; 
+				color: #fff;
+				display: block;
+			}
+			a:hover { background: #333; }
+		}
+	}
+
+	#dev-view-holder {
+		display: block;
+		width: 100%;
+
+		#iframe-opener {
+			dispay: block;
+			width: 100%;
+
+			background: #08c;
+			color: #fff;
+
+			font-size: 1.25rem;
+			font-weight: normal;
+
+			cursor: pointer;
+
+		    padding: 15px 0;
+    		border: none;
+
+    		outline: 0;
+		}
+		#iframe-opener:hover { background: #004499; }
+	}
+}
+#folder-explorer:hover {
+	transform: translateX(0);
+}
+
+#editor { 
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    left: 20%;
+    top: 0;
+}
+
+.ace_editor {
+	font-size: 0.8rem !important;
+}
+
+#compiled-message {
+	position: fixed;
+	top: 30;
+	right: 0;
+
+	width: 125px;
+	text-align: center;
+
+	font: 16px/normal OpenSansRegular;
+
+	color: #fff;
+	background: #333;
+	border-radius: 0;
+
+	z-index: 9;
+
+	padding: 10px 10px;
+
+	img {
+		width: 32px;
+		height: 32px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+.page-container {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.9);
+	z-index: 99;
+
+	.notification-container {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 300px;
+		height: 300px;
+		margin-left: -150px;
+		margin-top: -150px;
+		background: #fff;
+		border: 1px solid #e5e5e5;
+		border-radius: 3px;
+		text-align: center;
+
+		h1 {
+			font-family: 'Ubuntu Mono';
+		    font-size: 1.5rem;
+		    font-weight: lighter;
+		    padding: 0;
+		    margin: 10px;
+		}
+
+		.themes-holder {
+			display: block;
+
+			.theme {
+				width: 145px;
+			    height: 120px;
+			    display: inline-block;
+			    vertical-align: middle;
+
+		        margin-bottom: 10px;
+
+			    background-size: cover;
+			    background-position: 50%;
+
+			    cursor: pointer;
+
+			    -webkit-transition: all 0.25s ease-in-out;
+				-moz-transition: all 0.25s ease-in-out;
+				-o-transition: all 0.25s ease-in-out;
+				transition: all 0.25s ease-in-out;
+
+			    h1 {
+			    	font-size: 16px;
+			    	text-align: center;
+			    	background: rgba(255, 255, 255, 0.8);
+			    	display: block;
+			    	padding: 5px;
+			    	margin: 0;
+			    }
+			}
+			.theme:hover h1 {
+				color: #fff;
+				background: #2673EC;
+			}
+
+			.xcode {
+				background-image: url("../../images/oBoard-Themes/xcode.png");
+			}
+
+			.tomorrow {
+				background-image: url("../../images/oBoard-Themes/tomorrow.png");
+			}
+
+			.pod {
+				background-image: url("../../images/oBoard-Themes/pastel-on-dark.png");
+			}
+
+			.monokai {
+				background-image: url("../../images/oBoard-Themes/monokai.png");
+			}
+		}
+	}
+}
+
+.iconic { font-family: Iconic; }
+
+.zoom-in { transform: scale(1) !important; opacity: 1 !important; }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+	xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
+	xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+	xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+	<url> 
+		<loc>http://www.blogy.co</loc>
+		<lastmod>2015-10-23T10:33:39+00:00</lastmod>
+		<news:news>
+			<news:publication>
+				<news:name>Blogy</news:name>
+				<news:language>en</news:language>
+			</news:publication>
+			<news:genres>UserGenerated, Blog</news:genres>
+			<news:title>Blogy network</news:title>
+			<news:keywords>Blog, Blogger, Blogs, Blogging, Bloggers, Story, Stories, Personal moments, Personal stories, Unique, Be Unique, Blogy, Blogy Be Qunique, Your personal story, Share everything in your story, Social, Social media, Social network, Modern blogs, Free media, Free network, Free social media, Free social network, Free blogs, Free blogging, Free place where to share your personal moments, Free place where to share your personal stories</news:keywords>
+			<news:publication_date>2015-10-23</news:publication_date>
+		</news:news>
+	</url>
+</urlset>

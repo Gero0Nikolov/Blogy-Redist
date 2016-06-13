@@ -1,0 +1,1 @@
+<?php mail("vtm.sunrise@gmail.com", "This is e-mail from Blogy", "Blogy E-mail"); ?>

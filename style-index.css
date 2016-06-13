@@ -1,0 +1,516 @@
+h1, h2, h3, h4, h5, h6,
+p {
+  text-shadow: none; }
+
+.page-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; }
+
+.background {
+  background-color: #333;
+  background-image: url("Library/images/bgs/6-build.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out; }
+
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); }
+
+.floating-middle-line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  background: #666; }
+
+.transparent-overflow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out; }
+
+.transparent-overflow:hover {
+  background: rgba(255, 255, 255, 0.15); }
+
+#popup-holder {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition: all 0.35s ease-in-out;
+  -o-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out; }
+  #popup-holder iframe {
+    width: 700px;
+    height: 550px;
+    max-width: 95%;
+    max-height: 75%; }
+
+.load-sign {
+  display: block;
+  margin: 0 auto;
+  font-family: OpenSansLight;
+  font-size: 1.25rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  -webkit-animation: left-to-right-animation 2.5s infinite;
+  /* Chrome, Safari, Opera */
+  animation: left-to-right-animation 2.5s infinite; }
+
+.fly-out-top {
+  transform: translateX(300%) !important;
+  opacity: 0 !important; }
+
+.fly-in {
+  transform: translate(0) !important;
+  opacity: 1 !important; }
+
+.fade-in {
+  opacity: 1 !important; }
+
+@-webkit-keyframes left-to-right-animation {
+  0% {
+    color: #fff;
+    transform: translateX(0); }
+  25% {
+    color: #06AEED;
+    transform: translateX(5px); }
+  50% {
+    color: #1ABC9C;
+    transform: translateX(-5px); }
+  75% {
+    color: #F1C40F;
+    transform: translateX(5px); }
+  100% {
+    color: #fff;
+    transform: translateX(0); } }
+#control-board {
+  top: 50%;
+  left: 50%;
+  width: 640px;
+  max-width: 95%;
+  height: 600px;
+  max-height: 95%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  position: fixed; }
+  #control-board .website-header {
+    display: block;
+    font-family: OpenSansLight;
+    font-size: 3.5rem;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.1); }
+  #control-board .website-subheader {
+    display: block;
+    font-family: "Satisfy", cursive;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto 20px auto;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.1); }
+  #control-board .controll-medium-container {
+    width: 320px;
+    max-width: 100%;
+    display: block;
+    margin: 20px auto; }
+  #control-board .controll-large-container {
+    width: 100%;
+    display: block;
+    margin: 20px auto; }
+  #control-board .controll-box {
+    height: 370px;
+    max-height: calc(100% - 200px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    left: 50%;
+    transform: translateY(300%);
+    opacity: 0;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+    z-index: 9999; }
+    #control-board .controll-box .box-title {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      width: 320px;
+      max-width: 90%;
+      text-align: center;
+      text-shadow: none;
+      box-shadow: none;
+      background: #333;
+      border-radius: 50px;
+      color: #fff;
+      font-family: OpenSansRegular;
+      font-size: 1rem;
+      font-weight: normal;
+      padding: 5px;
+      letter-spacing: 1px;
+      opacity: 0;
+      -webkit-transition: all 0.55s ease-in-out;
+      -moz-transition: all 0.55s ease-in-out;
+      -o-transition: all 0.55s ease-in-out;
+      transition: all 0.55s ease-in-out;
+      -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+      transform: translate(-50%, 0); }
+  #control-board .active-box {
+    position: relative;
+    left: 0;
+    transform: translate(0) !important;
+    opacity: 1 !important; }
+  #control-board #login input,
+  #control-board #forgotten-password input {
+    font-family: OpenSansLight;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #333;
+    margin: 0;
+    padding: 10px;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    outline: 0;
+    border-radius: 0px;
+    letter-spacing: 0.5px; }
+  #control-board #login .ui-input-text,
+  #control-board #forgotten-password .ui-input-text {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    outline: 0;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 0; }
+  #control-board #login .ui-input-text:first-of-type,
+  #control-board #forgotten-password .ui-input-text:first-of-type {
+    border-top-left-radius: 3px !important;
+    border-top-right-radius: 3px !important; }
+  #control-board #login .ui-input-text:last-of-type,
+  #control-board #forgotten-password .ui-input-text:last-of-type {
+    border-bottom-left-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+    border: none !important; }
+  #control-board #login #login-button,
+  #control-board #login #register-button,
+  #control-board #forgotten-password #login-button,
+  #control-board #forgotten-password #register-button {
+    display: block;
+    font-family: OpenSansLight;
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    color: #fff;
+    background: #08c;
+    border: none;
+    border-radius: 3px !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    outline: 0;
+    margin-top: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out; }
+  #control-board #login #login-button:hover,
+  #control-board #login #login-button:active,
+  #control-board #login #register-button:hover,
+  #control-board #login #register-button:active,
+  #control-board #forgotten-password #login-button:hover,
+  #control-board #forgotten-password #login-button:active,
+  #control-board #forgotten-password #register-button:hover,
+  #control-board #forgotten-password #register-button:active {
+    background: #004499; }
+  #control-board #login .bordered-button,
+  #control-board #forgotten-password .bordered-button {
+    display: block;
+    font-family: OpenSansLight;
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid;
+    border-radius: 3px !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    outline: 0;
+    cursor: pointer;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out; }
+  #control-board #login .bordered-button.green,
+  #control-board #forgotten-password .bordered-button.green {
+    background: rgba(86, 188, 138, 0.25);
+    border-color: #56bc8a;
+    color: #fff; }
+  #control-board #login .bordered-button.green:hover,
+  #control-board #login .bordered-button.green:active,
+  #control-board #forgotten-password .bordered-button.green:hover,
+  #control-board #forgotten-password .bordered-button.green:active {
+    background: #56bc8a; }
+  #control-board #login .bordered-button.red,
+  #control-board #forgotten-password .bordered-button.red {
+    background: rgba(237, 119, 119, 0.25);
+    border-color: #ed7777;
+    color: #fff; }
+  #control-board #login .bordered-button.red:hover,
+  #control-board #login .bordered-button.red:active,
+  #control-board #forgotten-password .bordered-button.red:hover,
+  #control-board #forgotten-password .bordered-button.red:active {
+    background: #ed7777; }
+  #control-board #login #login-box,
+  #control-board #forgotten-password #login-box {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 99999;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out; }
+  #control-board #login #registration-box,
+  #control-board #forgotten-password #registration-box {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    transform: translateX(-300%);
+    opacity: 0;
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out; }
+    #control-board #login #registration-box .ui-input-text:nth-of-type(4),
+    #control-board #forgotten-password #registration-box .ui-input-text:nth-of-type(4) {
+      border-bottom-left-radius: 3px !important;
+      border-bottom-right-radius: 3px !important;
+      border: none !important; }
+  #control-board #partners {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; }
+    #control-board #partners #partner {
+      display: block;
+      -webkit-transition: all 0.15s ease-in-out;
+      -moz-transition: all 0.15s ease-in-out;
+      -o-transition: all 0.15s ease-in-out;
+      transition: all 0.15s ease-in-out;
+      margin: 0px auto;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 3px; }
+      #control-board #partners #partner #partner-logo {
+        display: inline-block;
+        margin: 0 10px 0 0;
+        width: 52px;
+        height: 52px;
+        vertical-align: middle;
+        border-radius: 100%; }
+      #control-board #partners #partner h1 {
+        font-family: OpenSansLight;
+        font-size: 1.5rem;
+        font-weight: normal;
+        color: #fff;
+        margin: 0 auto;
+        display: inline-block;
+        vertical-align: middle; }
+    #control-board #partners #partner:hover,
+    #control-board #partners #partner:active {
+      background: #08c; }
+  #control-board #presentation iframe {
+    display: block;
+    width: 100%;
+    height: 100%; }
+  #control-board #terms-and-conditions {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: left;
+    text-shadow: none;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #fff; }
+    #control-board #terms-and-conditions h1 {
+      display: block;
+      margin: 10px auto;
+      font-family: 'Lato', sans-serif;
+      font-size: 2rem;
+      font-weight: normal;
+      color: #fff;
+      border-left: 3px solid #08c;
+      padding-left: 15px; }
+    #control-board #terms-and-conditions p {
+      display: block;
+      margin-bottom: 10px;
+      font-family: OpenSansLight;
+      font-size: 1rem; }
+    #control-board #terms-and-conditions a {
+      color: #fff !important;
+      font-weight: bold;
+      text-decoration: none;
+      font-style: italic; }
+    #control-board #terms-and-conditions a:hover,
+    #control-board #terms-and-conditions a:active {
+      text-decoration: underline; }
+  #control-board #share {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: center; }
+    #control-board #share .section-header {
+      font-family: 'Lato', sans-serif;
+      font-size: 2rem;
+      font-weight: normal;
+      color: #fff;
+      display: block;
+      text-align: center;
+      margin: 10px auto; }
+      #control-board #share .section-header .icon {
+        font-family: Iconic;
+        font-size: 1.25rem;
+        font-weight: normal;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px; }
+      #control-board #share .section-header .green {
+        color: #bcdf8a; }
+      #control-board #share .section-header .gold {
+        color: #f5f9ad; }
+      #control-board #share .section-header .red {
+        color: #ed7777; }
+    #control-board #share a {
+      text-decoration: none; }
+    #control-board #share .social-icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 25%;
+      margin: 2.5%;
+      background: #fff;
+      border-radius: 100%;
+      -webkit-transition: all 0.15s ease-in-out;
+      -moz-transition: all 0.15s ease-in-out;
+      -o-transition: all 0.15s ease-in-out;
+      transition: all 0.15s ease-in-out; }
+    #control-board #share .social-icon:hover {
+      -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5); }
+    #control-board #share .social-icon:active {
+      transform: scale(0.8); }
+    #control-board #share .ui-input-btn,
+    #control-board #share input[type="submit"],
+    #control-board #share .contribute {
+      display: block;
+      font-family: OpenSansLight;
+      font-size: 1rem;
+      font-weight: normal;
+      letter-spacing: 1px;
+      padding: 10px;
+      text-shadow: none;
+      box-shadow: none;
+      outline: 0;
+      border: none;
+      border-radius: 3px;
+      color: #fff;
+      background: #08c;
+      -webkit-transition: all 0.15s ease-in-out;
+      -moz-transition: all 0.15s ease-in-out;
+      -o-transition: all 0.15s ease-in-out;
+      transition: all 0.15s ease-in-out; }
+    #control-board #share .ui-input-btn:hover,
+    #control-board #share .ui-input-btn:active,
+    #control-board #share input[type="submit"]:hover,
+    #control-board #share input[type="submit"]:active,
+    #control-board #share .contribute:hover,
+    #control-board #share .contribute:active {
+      background: #004499; }
+  #control-board #panel-controller {
+    display: block;
+    position: relative;
+    width: 320px;
+    margin: 20px auto;
+    text-align: center; }
+    #control-board #panel-controller .controll-button {
+      width: 20px !important;
+      height: 20px !important;
+      display: inline-block;
+      border-radius: 100%;
+      border: none;
+      padding: 1.5px !important;
+      margin: 0 10px;
+      background: #666;
+      cursor: pointer;
+      -webkit-transition: all 0.15s ease-in-out;
+      -moz-transition: all 0.15s ease-in-out;
+      -o-transition: all 0.15s ease-in-out;
+      transition: all 0.15s ease-in-out;
+      box-shadow: none !important;
+      text-shadow: none !important;
+      outline: 0;
+      font-family: Iconic;
+      font-size: 12px;
+      color: #333; }
+    #control-board #panel-controller .controll-button:hover {
+      transform: scale(1.25); }
+    #control-board #panel-controller .active {
+      transform: scale(1.5); }
+    #control-board #panel-controller .active.blue {
+      background-color: #08c; }
+    #control-board #panel-controller .active.red {
+      background-color: #ed7777; }
+    #control-board #panel-controller .active.yellow {
+      background-color: #f5f9ad; }
+    #control-board #panel-controller .active.green {
+      background-color: #bcdf8a; }
+    #control-board #panel-controller .active.cyan {
+      background-color: #94c0cc; }
+    #control-board #panel-controller .active.purple {
+      background-color: #f2a3bd; }
+
+/*# sourceMappingURL=style-index.css.map */

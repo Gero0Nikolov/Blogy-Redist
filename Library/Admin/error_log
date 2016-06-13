@@ -1,0 +1,4 @@
+[18-Dec-2015 09:35:10 Europe/Sofia] PHP Warning:  fopen(/home/kdkcompu/gero/blogy//Library/Authors/GeroNikolov/Plugins/tashak_torba/meta-description.txt): failed to open stream: No such file or directory in /home/kdkcompu/gero/blogy/Library/Admin/getPlugins.php on line 28
+[18-Dec-2015 09:35:10 Europe/Sofia] PHP Warning:  filesize(): stat failed for /home/kdkcompu/gero/blogy//Library/Authors/GeroNikolov/Plugins/tashak_torba/meta-description.txt in /home/kdkcompu/gero/blogy/Library/Admin/getPlugins.php on line 29
+[18-Dec-2015 09:35:10 Europe/Sofia] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/kdkcompu/gero/blogy/Library/Admin/getPlugins.php on line 29
+[18-Dec-2015 09:35:10 Europe/Sofia] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/kdkcompu/gero/blogy/Library/Admin/getPlugins.php on line 30

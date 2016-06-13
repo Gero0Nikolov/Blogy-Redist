@@ -1,0 +1,319 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+	<head>
+		<meta name='viewport' content='user-scalable=no'/>
+		<meta name="thumbnail" content="http://blogy.co/Library/images/Blogy-ICO.png" />
+		<meta name='description' content="Blogy is the place where everyone has the oportunity to share their personal and unique story with everyone. Blogy is the place where the borders are falling.">
+		<meta name='keywords' content="Blog, Blogger, Blogs, Blogging, Bloggers, Story, Stories, Personal moments, Personal stories, Unique, Be Unique, Blogy, Blogy Be Qunique, Your personal story, Share everything in your story, Social, Social media, Social network, Modern blogs, Free media, Free network, Free social media, Free social network, Free blogs, Free blogging, Free place where to share your personal moments, Free place where to share your personal stories">
+		<meta name='author' content="Gero Nikolov">
+
+		<meta property="og:url"                content="http://blogy.co" />
+		<meta property="og:type"               content="website" />
+		<meta property="og:title"              content="Blogy #BU" />
+		<meta property="og:description"        content="The social network of Bloggers." />
+		<meta property="og:image"              content="http://blogy.co/Library/images/Blogy-ICO.png" />
+
+		<link rel='shortcut icon' href='Library/images/Blogy-ICO.png' type='image/x-icon'>
+		<link rel='icon' href='Library/images/Blogy-ICO.png' type='image/x-icon'>
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="Library/images/Blogy-ICO.png" />
+		<title>Blogy</title>
+		<link href='style-index.css' rel='stylesheet' type='text/css' media='screen' />
+		<link href= 'fonts.css' rel='stylesheet' type='text/css'>
+		<link rel='stylesheet' href='fonts.css' />
+		<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+		
+		<script src='https://code.jquery.com/jquery-1.10.2.js'></script>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+ 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+		<script type='text/javascript' src='java.js'></script>
+		
+		<!--<link rel="stylesheet" type="text/css" href="jQuery/CAPTCHA/jquery.realperson.css"> 
+		<script type="text/javascript" src="jQuery/CAPTCHA/jquery.plugin.js"></script> 
+		<script type="text/javascript" src="jQuery/CAPTCHA/jquery.realperson.js"></script>-->
+
+		<script type='text/javascript' src='tryLog.js'></script>
+		<script type="text/javascript" src='Library/JScripts/index-page.js'></script>
+<!--	
+		<script>
+			var getRandom = Math.floor((Math.random() * 3) + 1);
+			if (getRandom == 3) {
+				document.getElementById("first-main").style.backgroundImage = "url('Library/images/background3.jpg') no-repeat center center fixed";
+			}
+			else
+			if (getRandom == 2) {
+				document.getElementById("first-main").style.backgroundImage = "url('Library/images/background2.jpg') no-repeat center center fixed";
+			}
+			else
+			if (getRandom == 1) {
+				document.getElementById("first-main").style.backgroundImage = "url('Library/images/background1.jpg') no-repeat center center fixed";
+			}
+		</script>
+-->
+	</head>
+	<body onload="Entry()">
+		<!--<script type="text/javascript">
+			if (screen.width <= 800) {
+				window.location = "http://google.com"; //-- SET TO REDIRECT TO MOBILE
+			}
+		</script>-->
+
+		<!-- Body parameter -->
+		<div id="front-page" style="display: none;"></div>
+
+		<!--Body BACKGROUND-->
+
+		<!--MAIN CONTAINER-->
+		<div id='first-main'>
+			<div id='message-container-main' onclick="cleanContainer()">
+				<div id='container-message' onclick='event.cancelBubble=true;if(event.stopPropagation) event.stopPropagation();return false;'>
+					<button class="close" onclick="cleanContainer()"></button>
+					<h1>Sorry :-(</h1>
+					<!-- <p>
+						It seems that we didn't find your e-mail..
+					</p>
+					<button>Register</button> -->
+				</div>
+			</div>
+			<div id='blur-container'>
+				<div id="additional">
+					<button class="left" onclick="window.open('Presentation/index.html')">Presentation</button>
+					<button class="right" onclick="$('#additional').fadeOut('fast'); $('#logIn-container').fadeOut('fast'); $('#nav-bar').fadeOut('fast'); $('#partnersList-main').fadeIn('fast'); $('#termsConditions').fadeOut('fast'); $('#forgottenPassword').fadeOut('fast'); $('#background-author').fadeOut('fast'); loadPartnerships();">Partners</button>
+				</div>
+				<div id='logIn-container'>
+					<h1>Blogy</h1>
+					<h2>#BeUnique</h2>
+					<form id='SignIn' action="Library/PHP/checkLog.php" method="post">
+						<input type='text' name="mail" id="mail" placeholder="E-mail">
+						<input type='password' name="password" id="password" onkeyup="checkKey(event, 0)" placeholder="Password">
+					</form>
+					<button type='button' id='login-button' onclick="tryLog()">Log in</button>
+					<div id='sub-options'>
+						<button type='button' onclick="$('#logIn-container').fadeOut('fast'); $('#forgottenPassword').fadeIn('fast');">Forgotten password</button>
+						<button type='button' onclick="$('#logIn-container').fadeOut('fast'); $('#termsConditions').fadeIn('fast');">Terms and conditions</button>
+					</div>
+					<!--<button type='button' class="storeButton" onclick="">Store</button>-->
+				</div>
+
+				<!--FORGOTEN PASSWORD-->
+				<div id='forgottenPassword'>
+					<h1>Forgotten password</h1>
+					<form id='passwordReset' method='post'>
+						<input type='text' id='email_uid' name='email_uid' placeholder='E-mail'>
+						<input type='password' id='save_code' name='save_code' placeholder='Authentication code' onkeyup="checkKey(event, 2)">
+					</form>
+					<button type='button' onclick='notEmpty()'>Log in</button>
+					<div id='sub-options'>
+						<button type='button' class='back-button' onclick="sendPasswordAndAuth();">Send me an email</button>
+						<button type='button' class='back-button' onclick="$('#forgottenPassword').fadeOut('fast'); $('#logIn-container').fadeIn('fast');">Back</button>
+					</div>
+				</div>
+
+				<!--TERMS AND CONDITIONS-->
+				<div id='termsConditions' onclick="$('#termsConditions').fadeOut('fast'); $('#logIn-container').fadeIn('fast');">
+					<button type='button' onclick="$('#termsConditions').fadeOut('fast'); $('#logIn-container').fadeIn('fast');"><span id="iconic-sign">&#xf104;</span>Back</button>
+					<div id='container'>
+						<h1>Your content</h1>
+						<p>
+							<b>Blogy</b> is a free-opened social network.<br>
+							That means <b>your story</b> will be public and everybody will be able to read and see it.<br>
+							<br>
+							<b>But does everything will be public ?</b><br>
+							Of course <b>no</b>.<br>
+							In <b>Blogy</b> we organized the content and we decided to make some sections private.<br>
+							These sections are :<br>
+							<b>
+								1. Your Album<br>
+								2. Your messages<br>
+								3. Your friends<br>
+							</b>
+							<br>
+							<b>What can you share in your story ?</b><br>
+							Here in <b>Blogy</b> we think that
+							everyone can choose what to share.
+							So we let you to choose what is good enough for your story.<br>
+							<b>
+								But we don't allow you to post those kind of stories :<br>
+								1. Stories that harass someone or someones privacy<br>
+								2. Brutal and violent content<br>
+								3. Pornographic materials<br>
+								If you find something inappropriate, report it and we will review it.<br>
+							</b>
+							<br>
+							<b>How we suggest you friends ?</b><br>
+							We get your friends, check their friends and we filter them
+							after that we suggest you the best matches for your.<br>
+						</p>
+						<h1>Other bloggers content</h1>
+						<p>
+							<b>Blogy</b> is a open-free social network.<br>
+							That means you can see <b>everybody's</b> stories.<br>
+							<br>
+							<b>Which sections are you able to see ?</b><br>
+							Just like you, all other <b>bloggers</b> have their own public and private sections.<br>
+							So you will be able to view their <b>Stories</b>
+						</p>
+						<h1>Friends</h1>
+						<p>
+							In <b>Blogy</b> we believe that when you <b>follow</b> someone you will want him as a friend.<br>
+							So when you follow someone that means you know atleast small thing about him or her.<br>
+							<br>
+							<b>What is the "Ohana" ?</b><br>
+							<b>Ohana</b> means <b>family</b> which means that every member of your <b>Family</b> must <i>#BeUnique</i>.<br>
+							In <b>Blogy</b> we believe in the <i>family love</i> so we designed the <b>Ohanas</b> in way that even if you <b>block</b> or <b>unfollow</b> someone who is a member of your <b>Family</b> he or she will stay there untill you don't remove them manually.<br>
+						</p>
+					</div>
+				</div>
+
+				<!--PARTNERS LIST-->
+				<div id='partnersList-main'>
+					<div id='nav-bar-child'>
+						<button type='button' class='back-button' onclick="$('#partnersList-main').fadeOut('fast'); $('#additional').fadeIn('fast'); $('#logIn-container').fadeIn('fast'); $('#nav-bar').fadeIn('fast'); $('#background-author').fadeIn('fast'); clearPartnersContainer();"><span id="iconic-sign">&#xf104;</span>Back</button>
+						<button class='donate-button' type='button'onclick="$('#forth-main').fadeIn('fast')">Be a partner</button>
+					</div>
+					<div id="partners-container">
+					</div>
+				</div>
+
+				<div id='nav-bar'>
+					<button type='button' class="left" onclick="$('#second-main').slideToggle('medium')">Meet Blogy</button>
+					<button type='button' class="center" onclick="$('#third-main').slideToggle('medium')">Join us !</button>
+					<button type='button' class="right" onclick="$('#forth-main').slideToggle('medium')">Partnerships</button>
+				</div>
+
+				<div id='background-author'>
+					<p>Blogy is using cookies</p>
+				</div>-->
+			</div>
+		</div>
+
+		<!--MEET BLOGY CONTAINER-->
+		<div id='second-main'>
+			<div id='nav-bar'>
+				<button type='button' onclick="$('#second-main').slideToggle('medium')"><!-- <span id="iconic-sign">&#xf104;</span> -->Back</button>
+			</div>
+			<div id='information-container'>
+				<img src="Library/images/Blogy-ICO.png" />
+				<p>
+					<span id='header'>Blogy is your own story where to share your personal moments.</span>
+
+					<span id='sub-header'>How it works ?</span>
+					Actually it is pretty simple. Just post everything you are interested in.<br>
+					Also read your friends interesting stories.<br>
+					That's all :)<br>
+
+					<span id='sub-header'>Who are we ?</span>
+					Well, we are a small group of <b>Bulgarian IT</b> students.<br>
+					Dev lead / Design lead / Founder: <a href='http://blogy.co?GeroNikolov' target='_blank'>Gero Nikolov</a><br>
+					Co-Founder: <a href='http://blogy.co?MladenKaradimov' target='_blank'>Mladen Karadimov</a><br>
+					Co-Founder: <a href='http://blogy.co?DimitarGeorgiev' target='_blank'>Dimitar Georgiev</a><br>
+				
+					<span id='sub-header'>How the idea came ?</span>
+					Actually, the first idea of <b>Blogy</b> was<br>only a simple web-store for <b>blog templates</b>.
+					And by the time we decided to make it a little bigger and a little different from the first idea.<br>
+					So here we are :)<br> 
+
+					<span id='sub-header'>Become a part of the project ?</span>
+					We are seeking for people who have a lot of free time and know what excactly <b>they want to do</b> !
+					<b>Why you need a lot of free time ?</b>
+					Well because, <b>Blogy</b> is <b>free social media</b> and for now we can't offer you pricing for the work you have done.
+					In exchange you will receive a lot of new knowledge and cool experience with our team.  
+					Well if you still want to join our community just click <a href="#" target='_blank' onclick='sendLetter()'>here</a>.
+				</p>
+			</div>
+		</div>
+
+		<!--REGISTER CONTAINER-->
+		<div id='third-main'>
+			<div id='nav-bar'>
+				<button type='button' onclick="$('#third-main').slideToggle('medium')"><!-- <span id="iconic-sign">&#xf104;</span> -->Back</button>
+			</div>
+			<h1>Become a Blogger.</h1>
+			<div id='form'>
+				<form id="register" action="Library/PHP/buildAuthor.php" method="post">
+					<input type="text" id="fName" name="fName" class='top' maxlength="60" placeholder="First name"></input>
+					<input type="text" id="lName" name="lName" maxlength="60" placeholder="Last name"></input>
+					<input type="text" id="mail-registration" name="mail" placeholder="E-mail address"></input>
+					<input type="password" id="pass1" name="pass" onkeyup="checkInput(event, 'pass1')" placeholder="Password"></input>
+					<input type="text" id="honey-pot" style="display: none;">
+				</form>
+				<button type='button' onclick="regLoad()">Go !</button>
+			</div>
+		</div>
+
+		<!-- PARTNERSHIPS CONTAINER -->
+		<div id='forth-main'>
+			<div id='nav-bar'>
+				<button type='button' onclick="$('#forth-main').slideToggle('medium')"><!-- <span id="iconic-sign">&#xf104;</span> -->Back</button>
+			</div>
+			<div id='three-columns' class='display-table text-align-center'>
+				<div id="social-container" class='column display-table-cell cell-vertical-align-middle'>
+					<div id="icons-container">
+						<img src="Library/images/social-container-fb.png" alt="Facebook" />
+						<img src="Library/images/social-container-twitter.png" alt="Twitter" />
+						<img src="Library/images/social-container-google.png" alt="Google+" />
+					</div>
+					<h2>Share it!</h2>
+					<p>
+						Help Blogy and #OpenBlogging with your share! 
+						Blogy is a free social network which means that we don't offer money
+						for advertising and we don't pay to the big advertisers to advertise us.
+						So the only way Blogy and #OpenBlogging to become more popular and loved by more people
+						is when you click on the share button and share it. Remember <strong>Sharing is caring</strong>!
+						#BeUnique
+					</p>
+					<div id="share-buttons">
+						<a href='http://www.facebook.com/share.php?u=http://blogy.co&title=The Social media of Bloggers' target='_blank' class="facebook">Facebook Share</a>
+						<a href='http://twitter.com/home?status=The Social media of Bloggers+http://blogy.co' target='_blank' class="twitter">Twitter Tweet</a>
+						<a href='https://plus.google.com/share?url=http://blogy.co' target='_blank' class="google">Google+ Post</a>
+					</div>
+				</div>
+				<div id="donate-container" class='column display-table-cell cell-vertical-align-middle'>
+					<div id="icons-container">
+						<img src="Library/images/social-donate.png" alt="Donate" />
+					</div>
+					<h2>Donate :-)</h2>
+					<p>
+						Become a partner of Blogy and #OpenBlogging with simple PayPal donation.
+						Since Blogy is free we don't charge our users for moneys. We beleive in the free
+						web applications and in the Open Source products. The core of Blogy is close (because of security reasons)
+						but everybody who wants to build his / hers own plugin is free to start just right now!
+					</p>
+					<div id="share-buttons">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="KD8XPWZHQWH9C">
+						<input type="submit" value="Donate now" name="submit" title="Donate with PayPal!" class="donate-button">
+						</form>
+						<div style="visibility: hidden;">
+							<a href='#' target='_blank' class="facebook">Share</a>
+							<a href='#' target='_blank' class="facebook">Share</a>
+						</div>
+					</div>
+				</div>
+				<div id="contribute-container" class='column display-table-cell cell-vertical-align-middle'>
+					<div id="icons-container">
+						<img src="Library/images/social-contributor.png" alt="Donate" />
+					</div>
+					<h2>Contribute!</h2>
+					<p>
+						Here in Blogy we believe that everyone have the possibility to say what he wants to say.
+						Just in the way he like it. So we've created the Core and our Developers Blog opened for everyone.
+						If you are person who likes to write beautiful articles and inspire the others,
+						If you are person who likes to think smarter and creatively than the others then feel free to join our
+						developers community.
+					</p>
+					<div id="share-buttons">
+						<a href='http://dev.blogy.co/contributors/' target='_blank' class="contribute">Contribute!</a>
+						<div style="visibility: hidden;">
+							<a href='#' target='_blank' class="facebook">Share</a>
+							<a href='#' target='_blank' class="facebook">Share</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

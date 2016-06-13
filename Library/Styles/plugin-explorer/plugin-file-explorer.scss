@@ -1,0 +1,166 @@
+#file-explorer {
+	width: 60%;
+	max-height: calc(100% - 84px);
+	display: table;
+	margin: 84px auto;
+	text-align: center;
+
+	.breadcrumbs { display: none; }
+
+	.project-header {
+		display: table-caption;
+		background: #fff;
+
+	   	border-top-left-radius: 3px;
+   		border-top-right-radius: 3px;
+
+		h1 {
+			display: block;
+			padding: 5px 5px;
+			margin: 0px 0px;
+
+			font-family: OpenSansLight;
+			font-size: 1.5rem;
+			font-weight: normal;
+
+			color: #08c;
+			border-bottom: 1px solid #e5e5e5;
+		}
+	}
+	
+	.project-sidebar {
+		display: table-cell;
+		width: 30%;
+		height: 100%;
+		background: #fff;
+		border-right: 1px solid #e5e5e5;
+		border-bottom-left-radius: 3px;
+	    text-align: left;
+
+	    overflow: auto;
+	    vertical-align: top;
+
+	    button {
+	    	display: block;
+
+	    	font-family: OpenSansRegular;
+	    	font-size: 14px;
+	    	font-weight: normal;
+
+	    	padding: 5px 5px;
+
+	    	background: none;
+	    	border: none;
+	    	cursor: pointer;
+
+	    	text-align: left;
+	    	width: 100%;
+
+	    	border-bottom: 1px solid #e5e5e5;
+
+	    	.button-icon {
+	    		width: 24px;
+	    		height: 24px;
+	    		display: inline-block;
+	    		vertical-align: middle;
+	    		margin-right: 5px;
+	    	}
+	    }
+	    button:hover {
+	    	background: #F8F9FA;
+	    }
+	}
+	
+	.directory-holder {
+		display: table-cell;
+		width: 70%;
+		height: 100%;
+		background: #fff;
+		border-bottom-right-radius: 3px;
+		overflow: auto;
+		vertical-align: top;
+
+		#back {
+			display: block;
+
+			font-family: OpenSansRegular;
+			font-size: 14px;
+			font-weight: normal;
+
+			color: #08c;
+			background: none;
+			cursor: pointer;
+
+			border: none;
+			padding: 5px;
+
+			span {
+				margin-right: 2px;
+			}
+		}
+		#back:hover {
+			background: #F8F9FA;
+		}
+
+		.row {
+			display: block;
+			border-bottom: 1px solid #e5e5e5;
+			text-align: left;
+		}
+
+		.placeholder,
+		.patch-file {
+			display: inline-block;
+			background: none;
+			border: none;
+			cursor: pointer;
+			font-family: OpenSansRegular;
+			font-size: 14px;
+			font-weight: normal;
+			color: #000;
+			padding: 5px 5px;
+			text-align: left;
+			width: 70%;
+
+			span {
+				color: #ccc;
+				margin-right: 5px;
+			}
+		}
+		.placeholder:hover {
+			background: #F8F9FA;
+
+			span { color: #08c; }
+		}
+
+		.patch-file {
+			background: #F8F9FA;
+			cursor: default;
+			span { color: #08c; }
+		}
+
+		.side-options {
+			display: inline-block;
+			width: 29%;
+			text-align: right;
+
+			a,
+			button {
+				border: none;
+				background: none;
+				cursor: pointer;
+				
+				font-size: 14px;
+				font-weight: normal;
+
+				color: #ccc;
+				margin: 0;
+				padding: 5px 5px;
+			}
+
+			.edit:hover { color: #78BA00 !important; }
+			.move:hover { color: #FFBE00 !important; }
+			.remove:hover { color: #FF0000 !important; }
+		}
+	}
+}
